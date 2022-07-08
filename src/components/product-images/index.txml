@@ -1,7 +1,7 @@
 <view class="relative">
   <view
     tiki:if="{{isLoading}}"
-    class="products-images-skeleton skeleton w-full"
+    class="products-images-skeleton skeleton"
   />
   <carousel
     tiki:else

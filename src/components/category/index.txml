@@ -19,7 +19,7 @@
       <cached-image
         cacheWidth="{{100}}"
         class="category-logo mb-2x-small"
-        src="{{category.thumbnail_url}}"
+        src="{{category.imageUrl}}"
       />
       <text
         class="category-name text-center"
@@ -44,7 +44,7 @@
       <view class="mr-2x-small">
         <cached-image
           class="category-logo"
-          src="{{category.thumbnail_url}}"
+          src="{{category.imageUrl}}"
         />
       </view>
       <text number-of-lines="{{2}}">

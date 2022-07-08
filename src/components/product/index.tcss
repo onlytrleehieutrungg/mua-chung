@@ -4,7 +4,7 @@
 
 .product-thumbnail,
 .product-thumbnail-skeleton {
-  width: auto;
-  height: 0;
-  padding-bottom: 100%;
+  width: 100px;
+  height: auto;
+ 
 }

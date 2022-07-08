@@ -37,7 +37,6 @@ Page({
       isLoadingCategory: true,
       isLoadingProduct: true,
     });
-
     try {
       const [categories, products] = await Promise.all([
         getCategoriesAPI({

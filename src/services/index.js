@@ -1,17 +1,17 @@
 import request from './request';
 
+
 export const getShopInfoAPI = async ({ sellerId }) => {
   return request({
     path: `/merchant/profiles/${sellerId}`,
   });
 };
 
-export const getCategoriesAPI = async ({ sellerId, parentId }) => {
+export const getCategoriesAPI = async () => {
   const res = await request({
-    path: '/merchant/categories',
+    baseUrl: 'https://quangnt1702.ml/api/v1',
+    path: '/categories',
     params: {
-      seller_id: sellerId,
-      parent_id: parentId,
     },
   });
 
