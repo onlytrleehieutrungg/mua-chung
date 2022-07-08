@@ -59,7 +59,7 @@
     <product-section
       isLoading="{{isLoading}}"
       skeletons="{{4}}"
-      products="{{newProducts.data}}"
+      products="{{featuredProducts.data}}"
       onTapProduct="onTapProduct"
     />
   </view>

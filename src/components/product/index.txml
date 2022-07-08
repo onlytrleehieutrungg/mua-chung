@@ -12,7 +12,7 @@
 
   <template name="product-completed">
     <view class="flex justify-between items-center" catchTap="_onTapProduct">
-      <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.thumbnail_url}}"
+      <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.product.imageUrl}}"
         mode="widthFix" cacheWidth="{{280}}" />
       <view class="mx-2x-small"> 
         <text class="mb-4x-small" number-of-lines="{{2}}">
@@ -20,6 +20,15 @@
         </text>
         <progress percent="90" active="true" show-info="true" />
         <view tiki:if="{{product.rating_average}}" class="mb-4x-small">
+          <view class="mr-2x-small">
+            <cached-image
+              class="image-logo mr-2x-small"
+              src="{{'/assets/images/ancestors.png'}}"
+              mode="widthFix"
+              cacheWidth="{{200}}"
+            />
+          </view>
+          
           <rating rate="{{product.rating_average}}" votes="{{product.review_count}}" />
         </view>
         <view class="flex items-center">

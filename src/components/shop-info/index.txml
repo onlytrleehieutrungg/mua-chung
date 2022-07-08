@@ -6,7 +6,7 @@
       <view class="mr-2x-small">
         <cached-image
           class="shop-info-logo mr-2x-small"
-          src="{{shop.logo || '/assets/images/shop-logo.png'}}"
+          src="{{'/assets/images/Frame.png'}}"
           mode="widthFix"
           cacheWidth="{{200}}"
         />
@@ -16,7 +16,7 @@
           class="font-bold text-medium"
           number-of-lines="{{1}}"
         >
-          {{shop.name}}
+          {{"Buyether"}}
         </text>
         <text
           tiki:if="{{follow.following.total_follower}}"

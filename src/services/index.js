@@ -26,7 +26,8 @@ export const getProductsAPI = async ({
   sort,
 }) => {
   const res = await request({
-    path: `/merchant/collections/${categoryId ? '5' : '6'}/products`,
+    baseUrl: 'https://quangnt1702.ml/api/v1',
+    path: `/products`,
     headers: {
       'x-source': 'local',
     },
