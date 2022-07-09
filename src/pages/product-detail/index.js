@@ -16,15 +16,15 @@ Page({
     items: [
       {
         label: 'Start',
-        sub: 'Description',
+        // sub: 'Description',
       },
       {
-        label: 'Middle',
-        sub: 'Description',
+        label: '50%',
+        // sub: 'Description',
       },
       {
         label: 'End',
-        sub: 'Description',
+        // sub: 'Description',
       },
     ],
     activeIndex: 1,
