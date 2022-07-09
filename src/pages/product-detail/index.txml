@@ -50,6 +50,7 @@
     <view class="product-detail-footer-button px-medium py-2x-small">
       <button
         class="w-full"
+        style="border: #05A94F; background-color: #05A94F;"
         shape="pill"
         disabled="{{isLoading || product.categories.id === 11312}}"
         onTap="handleAddToCart"

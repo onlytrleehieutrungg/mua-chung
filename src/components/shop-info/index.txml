@@ -31,9 +31,10 @@
       <button
         loading="{{isFollowButtonLoading}}"
         class="flex-grow"
+        style="border: #05A94F; background-color: #05A94F;"
         size="medium"
         shape="pill"
-        type="{{follow.is_followed ? 'outline' : 'solid'}}"
+        type="{{follow.is_followed ? 'solid' : 'solid'}}"
         onTap="_onTapFollowButton"
       >
         
