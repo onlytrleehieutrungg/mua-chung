@@ -6,7 +6,7 @@
     class="flex items-center"
     onTap="_onTapActionButton"
   >
-    <text class="mr-2x-small " >
+    <text class="text-green-600 mr-2x-small " >
       {{action}}
     </text>
     <icon type="arrow_right" color="#05A94F"/>

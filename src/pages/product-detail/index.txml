@@ -33,7 +33,7 @@
       />
     </view>
     <view class="section-divider"/>
-    <block tiki:if="{{isLoading || relativeProducts.length}}">
+    <!-- <block tiki:if="{{isLoading || relativeProducts.length}}">
       <view class="p-medium bg-white">
         <view class="mb-small font-bold text-medium">Sản phẩm tương tự</view>
         <product-section
@@ -44,7 +44,7 @@
         />
       </view>
       <view class="section-divider"/>
-    </block>
+    </block> -->
   </view>
   <view class="fixed product-detail-footer bg-white">
     <view class="product-detail-footer-button px-medium py-2x-small">

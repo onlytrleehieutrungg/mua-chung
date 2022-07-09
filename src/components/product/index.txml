@@ -14,26 +14,26 @@
     <view class="flex items-center" catchTap="_onTapProduct">
       <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.imageUrl == null ? '/assets/images/Frame.png' : product.imageUrl}}"
         mode="widthFix" cacheWidth="{{280}}" />
-      <view class="mx-2x-small"> 
-        <text class="mb-4x-small" number-of-lines="{{2}}">
+      <view class="container"> 
+        <text class="text-style" number-of-lines="{{2}}">
           {{product.name}}
         </text>
-        <progress percent="90" active="true" show-info="true" />
+        <progress percent="80" active="true" show-info="true" active-color="#037235" stroke-width="10"/>
         <view  class="">
           <view class="flex">
             <image
               class="image-item"
               src="{{'/assets/images/ancestors.png'}}"
               mode="widthFix"
-              cacheWidth="{{200}}"
+              cacheWidth="{{280}}"
             />
             {{productInCampaign.price}}
           </view>
           
-          <rating rate="{{product.rating_average}}" votes="{{product.review_count}}" />
+
         </view>
         <view class="flex items-center">
-          <text class="font-bold mr-2x-small" number-of-lines="{{1}}">
+          <text class="price-style" number-of-lines="{{1}}">
             {{ '15.000 ₫'}}
           </text>
           <view tiki:if="{{product.discount_rate}}"
