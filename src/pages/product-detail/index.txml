@@ -5,7 +5,7 @@
   <product-images isLoading="{{isLoading}}" images="{{product.imageUrl}}" />
   <view class="py-medium product-detail-content">
     <view style="" class="page flex flex-col">
-      <template is="variant-format" data="{{items, items2, activeIndex, failIndex}}" />
+      <template is="variant-format" data="{{items, items2, activeIndex, failIndex}}"/>
     </view>
     <product-header className="px-medium" isLoading="{{isLoading}}" product="{{...product, ...selectedProduct}}" />
     <product-option tiki:for="{{isLoading ? 2 : product.configurable_options}}" tiki:key="code"
@@ -14,7 +14,7 @@
     <view class="section-divider mt-medium" />
     <template name="variant-format">
       <view class="bg-white" style="flex: 1;">
-        <steps onTapStep="onTapStep" className="p-medium" activeIndex="{{activeIndex}}" items="{{items}}">
+        <steps onTapStep="onTapStep" className="p-medium" activeIndex="{{activeIndex}}" items="{{items}}" activeColor="#037235">
         </steps>
         <steps onTapStep="onTapStep" className="mt-medium" activeIndex="{{0}}" items="{{items2}}" direction="vertical">
         </steps>
@@ -38,8 +38,10 @@
   <view class="fixed product-detail-footer bg-white">
     <view class="product-detail-footer-button px-medium py-2x-small">
       <view class="flex justify-center">
-        <up-down-number value="{{number}}" onChange="onChangeNumber" min="{{1}}" max="{{99}}" />
+        <view><button onTap="onlow">low</button>{{number}}<button onTap="onhigh">high</button></view>
+        <button onTap="toCart">cart</button>
       </view>
+      <view class="spacing"></view>
       <button class="w-full" style="border: #05A94F; background-color: #05A94F;" shape="pill"
         disabled="{{isLoading || product.categories.id === 11312}}" onTap="handleAddToCart">
         {{product.categories.id === 11312 ? 'Vui lòng thanh toán tại website' : 'Thêm vào giỏ hàng'}}

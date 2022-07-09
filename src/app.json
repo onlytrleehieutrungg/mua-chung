@@ -4,7 +4,8 @@
     "pages/category/index",
     "pages/product/index",
     "pages/search/index",
-    "pages/product-detail/index"
+    "pages/product-detail/index",
+    "pages/order-detail/index"
   ],
   "window": {
     "defaultTitle": "",

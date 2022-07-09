@@ -2,13 +2,12 @@ import {
   getProductDetails,
   getProductsAPI,
   getProductsSearchAPI,
-} from '../../services';
-import { navigate, parseQuery } from '../../utils/navigate';
-import { loadCartIcon } from '../../utils/cart';
-import myx from '../../utils/myx';
+} from "../../services";
+import { navigate, parseQuery } from "../../utils/navigate";
+import { loadCartIcon } from "../../utils/cart";
+import myx from "../../utils/myx";
 
 const sellerId = getApp().sellerId;
-
 
 Page({
   data: {
@@ -16,33 +15,36 @@ Page({
     items: [
       {
         label: 'Start',
-        sub: 'Description',
+        // sub: 'Description',
       },
       {
-        label: 'Middle',
-        sub: 'Description',
+        label: '50%',
+        // sub: 'Description',
       },
       {
         label: 'End',
-        sub: 'Description',
+        // sub: 'Description',
       },
     ],
     activeIndex: 1,
+
+    
+
+
     failIndex: 1,
     number: 0,
     size: 0,
     showNumberSteps: true,
     relativeProducts: [],
     onTapStep(e) {
-      my.alert({ content: 'you tapped step ' + e.target.dataset.step });
+      my.alert({ content: "you tapped step " + e.target.dataset.step });
     },
     toast: {
-      type: 'success',
+      type: "success",
       isShow: false,
-      content: '',
+      content: "",
     },
     selectedProduct: {},
-   
   },
 
   async loadData(product_id, spid) {
@@ -62,7 +64,7 @@ Page({
       const relativeProductsSameNamePromise = getProductsSearchAPI({
         sellerId,
         limit: 4,
-        keyword: product.name.split(' ').slice(0, 3).join(' '),
+        keyword: product.name.split(" ").slice(0, 3).join(" "),
       });
 
       const [relativeProductsInCategory, relativeProductsSameName] =
@@ -93,64 +95,59 @@ Page({
       });
     }
   },
-  onIncrease() {
-    this.setData({number:this.number.onChangeNumber(1)})
-    ;
-  },
-  onDecrease() {
-    this.setData({number:this.number.onChangeNumber(-1)})
- 
-  },
-  onChangeNumber(v) {
-    this.number.onChangeNumber(v);
-  },
+
   async handleAddToCart() {
+    let campaignID = this.data.product.campaignId;
+    let productID = this.data.product.productInCampaign.productId;
+
     try {
-      my.getStorage({
-        key: 'cart',
-        success: function (res) {
-          const findIndex = res.findIndex((i) => i.campaignId === this.data.product.campaignId);
-          if(findIndex!=-1){
-            res[findIndex].orderItems[0].quantity += 1;
-          }
-          my.alert({ content: 'Title' + res.data.title });
-        },
-        fail: function (res) {
-          my.alert({ content: res.errorMessage });
-        }
-      });
+      // my.getStorage({
+      //   key: "cart",
+      //   success: function (res) {
+      //     const findIndex = res.data.findIndex(
+      //       (i) => i.campaignId === this.data.product.campaignId
+      //     );
+      //     if (findIndex != -1) {
+      //       res[findIndex].orderItems[0].quantity += number;
+      //       console.log(res.data[0]);
+      //     }
+      //   },
+      //   fail: function (res) {
+      //     my.alert({ content: res.errorMessage });
+      //   },
+      // });
       my.setStorage({
-        key: 'cart',
-        data:[
+        key: "cart",
+        data: [
           {
-            campaignId: this.data.product.campaignId,
+            campaignId: campaignID,
             orderItems: [
               {
-                quantity: 1,
-                productId: this.data.product.productId
-              }
-            ]
+                quantity: this.data.number,
+                productId: productID,
+              },
+            ],
           },
         ],
         success: function () {
-          my.alert({ content: 'Saved successfully' });
-        }
+          my.alert({ content: "Saved successfully" });
+        },
       });
       this.setData({
         toast: {
           isShow: true,
-          type: 'success',
-          content: 'Thêm vào giỏ hàng thành công',
+          type: "success",
+          content: "Thêm vào giỏ hàng thành công",
         },
       });
-      const { total } = await myx.getCart({ sellerId });
-      loadCartIcon({ isShowDot: total > 0 });
+      // const { total } = await myx.getCart({ sellerId });
+      // loadCartIcon({ isShowDot: total > 0 });
     } catch {
       this.setData({
         toast: {
           isShow: true,
-          type: 'fail',
-          content: 'Thêm vào giỏ hàng thất bại',
+          type: "fail",
+          content: "Thêm vào giỏ hàng thất bại",
         },
       });
     }
@@ -174,7 +171,7 @@ Page({
 
   onTapProduct(product) {
     navigate({
-      page: 'product-detail',
+      page: "product-detail",
       params: {
         product_id: product.campaignId,
         // spid: product.seller_product_id,
@@ -182,6 +179,17 @@ Page({
     });
   },
 
+  onhigh() {
+    const num = this.data.number + 1;
+    this.setData({ number: num });
+  },
+  onlow() {
+    const num = this.data.number - 1;
+    this.setData({ number: num });
+  },
+  toCart() {
+    my.navigateTo({ url: "pages/order-detail/index" });
+  },
   // Life cycle
   onLoad(query) {
     const { product_id, spid } = parseQuery(query);
@@ -203,7 +211,7 @@ Page({
 
   onCustomIconEvent() {
     my.openScreen({
-      screenCode: 'TK_CART',
+      screenCode: "TK_CART",
     });
   },
 });

@@ -13,3 +13,7 @@
 .product-detail-footer-button {
   padding-bottom: calc(8px + var(--safe-area-inset-bottom));
 }
+
+.spacing{
+  height: 8px;
+}
