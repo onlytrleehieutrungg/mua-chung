@@ -1,5 +1,5 @@
 {
-  "pullRefresh": true,
+  "pullRefresh": "YES",
   "transparentTitle": "always",
   "usingComponents": {
     "shop-info": "components/shop-info/index",

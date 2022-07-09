@@ -34,7 +34,7 @@
         </view>
         <view class="flex items-center">
           <text class="font-bold mr-2x-small" number-of-lines="{{1}}">
-            {{`${product.productInCampaign.price}₫` }}
+            {{`${product.productInCampaign.price}₫`}}
           </text>
           <view tiki:if="{{product.campaignPriceLevels[0].discountValue}}"
             class="text-white product-badge font-bold text-x-small radius-8px px-4x-small">

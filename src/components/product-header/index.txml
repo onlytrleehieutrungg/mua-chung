@@ -14,20 +14,20 @@
     <view class="text-large mb-2x-small">
       {{product.name}}
     </view>
-    <rating
+    <!-- <rating
       tiki:if="{{product.rating_average}}"
       className="mb-2x-small"
       rate="{{product.rating_average}}"
       votes="{{product.review_count}}"
-    />
+    /> -->
     <view class="flex items-center">
       <view class="mr-2x-small font-bold">
-        {{numberFormatter(product.price, ' ₫')}}
+        {{numberFormatter(product.productInCampaign.price, ' ₫')}}
       </view>
       <view
-        tiki:if="{{product.discount_rate}}"
+        tiki:if="{{product.campaignPriceLevels[0].discountValue}}"
         class="bg-red radius-8px px-4x-small text-white font-bold text-x-small">
-        {{`-${product.discount_rate}%`}}
+        {{`-${product.campaignPriceLevels[0].discountValue}%`}}
       </view>
     </view>
     <view class="text-gray60 font-strikethrough">

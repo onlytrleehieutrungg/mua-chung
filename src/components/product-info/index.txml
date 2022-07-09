@@ -1,50 +1,44 @@
 <view class="{{className}}">
   <template name="loading">
-    <view class="skeleton skeleton-font-medium mb-4x-small w-full"/>
-    <view class="skeleton skeleton-font-medium mb-4x-small w-full"/>
-    <view class="skeleton skeleton-font-medium mb-4x-small w-full"/>
-    <view class="my-medium skeleton w-full skeleton-paragraph"/>
+    <view class="skeleton skeleton-font-medium mb-4x-small w-full" />
+    <view class="skeleton skeleton-font-medium mb-4x-small w-full" />
+    <view class="skeleton skeleton-font-medium mb-4x-small w-full" />
+    <view class="my-medium skeleton w-full skeleton-paragraph" />
   </template>
 
   <template name="completed">
-    <view tiki:if="{{formattedSpecifications.length}}">
-      <block
-        tiki:for="{{formattedSpecifications}}"
-        tiki:key="code"
-      >
+    <view>
+      <block>
         <view class="flex justify-between">
-          <text class="mr-medium text-nowrap">{{item.name}}</text>
+          <text class="mr-medium text-nowrap">{{"Sản phẩm đã bán"}}</text>
           <view class="font-bold text-right">
-            <rich-text nodes="{{item.value}}" />
+            <text>{{100}}</text>
           </view>
         </view>
-        <view class="item-divider my-2x-small"/>
+        <view class="item-divider my-2x-small" />
+        <view class="flex justify-between">
+          <text class="mr-medium text-nowrap">{{"Người tham gia hiện tại"}}</text>
+          <view class="font-bold text-right">
+            <text>{{230}}</text>
+          </view>
+        </view>
+        <view class="item-divider my-2x-small" />
       </block>
     </view>
 
-    <view
-      tiki:if="{{formattedDescription.length}}"
-      class="product-info-html mb-medium {{isShowMore ? 'pb-large product-info-html-show-more' : ''}}"
-    >
+    <view tiki:if="{{formattedDescription.length}}"
+      class="product-info-html mb-medium {{isShowMore ? 'pb-large product-info-html-show-more' : ''}}">
       <rich-text nodes="{{formattedDescription}}" />
-      <view class="overlay-img"/>
-      <view
-        class="view-more flex items-center"
-        onTap="handleSwitchViewMore"
-      >
+      <view class="overlay-img" />
+      <view class="view-more flex items-center" onTap="handleSwitchViewMore">
         <view class="text-medium text-blue mr-2x-small">
           {{isShowMore ? 'Thu gọn' : 'Xem thêm'}}
         </view>
-        <icon
-          type="{{isShowMore ? 'arrow_up' : 'arrow_down'}}"
-          color="#1A94FF"
-        />
+        <icon type="{{isShowMore ? 'arrow_up' : 'arrow_down'}}" color="#1A94FF" />
       </view>
     </view>
   </template>
 </view>
 
-<template
-  is="{{isLoading ? 'loading' : 'completed'}}"
-  data="{{formattedSpecifications, formattedDescription, isShowMore}}"
-/>
+<template is="{{isLoading ? 'loading' : 'completed'}}"
+  data="{{formattedSpecifications, formattedDescription, isShowMore}}" />

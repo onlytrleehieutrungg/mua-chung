@@ -2,7 +2,7 @@ Component({
   props: {
     className: '',
     isLoading: true,
-    images: [],
+    images: '',
   },
 
   data: {

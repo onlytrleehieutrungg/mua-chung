@@ -7,11 +7,11 @@
     tiki:else
     onChange="handleOnChange"
   >
-    <carousel-item tiki:for="{{images}}">
+    <carousel-item >
       <view class="relative">
         <cached-image
           className="w-full"
-          src="{{item.base_url ? item.base_url : item.medium_url}}"
+          src="{{images}}"
           mode="aspectFit"
           cacheWidth="{{360}}"
         />
@@ -22,6 +22,6 @@
     tiki:if="{{!isLoading}}"
     class="products-images-index text-white"
   >
-    {{current}}/{{images.length}}
+    {{current}}/{{1}}
   </view>
 </view>

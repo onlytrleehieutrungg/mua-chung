@@ -10,7 +10,12 @@ class Target {
     // we store the last element at top of the array
     this.data.unshift(item);
   }
-
+  addToCart() {
+    app.addProduct(this.data.product);
+    loadBadgeCart();
+    this.showToast(`Add to cart successfully`);
+  }
+  
   debug(...params) {
     this.addLogItem({
       type: 'log',

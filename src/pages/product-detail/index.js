@@ -13,13 +13,36 @@ const sellerId = getApp().sellerId;
 Page({
   data: {
     product: {},
+    items: [
+      {
+        label: 'Start',
+        sub: 'Description',
+      },
+      {
+        label: 'Middle',
+        sub: 'Description',
+      },
+      {
+        label: 'End',
+        sub: 'Description',
+      },
+    ],
+    activeIndex: 1,
+    failIndex: 1,
+    number: 0,
+    size: 0,
+    showNumberSteps: true,
     relativeProducts: [],
+    onTapStep(e) {
+      my.alert({ content: 'you tapped step ' + e.target.dataset.step });
+    },
     toast: {
       type: 'success',
       isShow: false,
       content: '',
     },
     selectedProduct: {},
+   
   },
 
   async loadData(product_id, spid) {
@@ -28,7 +51,8 @@ Page({
     });
 
     try {
-      const product = await getProductDetails({ id: product_id, spid });
+      const productDetail = await getProductDetails({ id: product_id });
+      this.setData({ product: productDetail });
       const relativeProductsInCategoryPromise = getProductsAPI({
         sellerId,
         limit: 4,
@@ -53,8 +77,8 @@ Page({
           product.configurable_products[0]);
 
       this.setData({
-        product,
-        selectedProduct: selectedProduct ? selectedProduct : product,
+        product: product,
+        selectedProduct: product,
         selectedProductId: selectedProduct
           ? selectedProduct.id
           : product.current_seller.product_id,
@@ -69,16 +93,48 @@ Page({
       });
     }
   },
-
+  onIncrease() {
+    this.setData({number:this.number.onChangeNumber(1)})
+    ;
+  },
+  onDecrease() {
+    this.setData({number:this.number.onChangeNumber(-1)})
+ 
+  },
+  onChangeNumber(v) {
+    this.number.onChangeNumber(v);
+  },
   async handleAddToCart() {
     try {
-      await myx.addToCart({
-        products: [
+      my.getStorage({
+        key: 'cart',
+        success: function (res) {
+          const findIndex = res.findIndex((i) => i.campaignId === this.data.product.campaignId);
+          if(findIndex!=-1){
+            res[findIndex].orderItems[0].quantity += 1;
+          }
+          my.alert({ content: 'Title' + res.data.title });
+        },
+        fail: function (res) {
+          my.alert({ content: res.errorMessage });
+        }
+      });
+      my.setStorage({
+        key: 'cart',
+        data:[
           {
-            productId: this.data.selectedProductId,
-            quantity: 1,
+            campaignId: this.data.product.campaignId,
+            orderItems: [
+              {
+                quantity: 1,
+                productId: this.data.product.productId
+              }
+            ]
           },
         ],
+        success: function () {
+          my.alert({ content: 'Saved successfully' });
+        }
       });
       this.setData({
         toast: {

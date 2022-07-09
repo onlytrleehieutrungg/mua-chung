@@ -32,7 +32,7 @@ Component({
   props: {
     className: '',
     isLoading: true,
-    specifications: [],
+    specifications: '',
     description: '',
   },
 

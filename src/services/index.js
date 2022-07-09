@@ -83,7 +83,7 @@ export const getBannersAPI = async () => {
   return res.data;
 };
 
-export const getProductDetails = async ({ id, spid }) => {
+export const getProductDetails = async ({ id }) => {
   const res = await request({
     baseUrl: 'https://quangnt1702.ml/api/v1',
     path: `/campaigns/${id}`,
