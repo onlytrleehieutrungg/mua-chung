@@ -85,10 +85,10 @@ export const getBannersAPI = async () => {
 
 export const getProductDetails = async ({ id, spid }) => {
   const res = await request({
-    baseUrl: 'https://tiki.vn/api/v2',
-    path: `/products/${id}`,
+    baseUrl: 'https://quangnt1702.ml/api/v1',
+    path: `/campaigns/${id}`,
     params: {
-      spid,
+
     },
   });
 
