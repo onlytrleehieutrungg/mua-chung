@@ -17,3 +17,29 @@
 .spacing{
   height: 8px;
 }
+
+.up-down-number .t-input {
+  width: 40px;
+  padding: 0;
+  margin: 0 4px;
+}
+.up-down-number .t-input-wrap {
+  width: 40px;
+  text-align: center;
+}
+.up-down-number .value-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+}
+
+.img-item{
+  /* color: #05A94F; */
+  width: 20px;
+  height: 20px;
+  
+}

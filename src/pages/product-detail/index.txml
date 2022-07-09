@@ -1,3 +1,4 @@
+
 <view>
   <view className="px-medium mt-medium">
     <view class="mb-20px font-bold text-medium">Cái gì đó</view>
@@ -37,10 +38,27 @@
   </view>
   <view class="fixed product-detail-footer bg-white">
     <view class="product-detail-footer-button px-medium py-2x-small">
-      <view class="flex justify-center">
-        <view><button onTap="onlow">low</button>{{number}}<button onTap="onhigh">high</button></view>
-        <button onTap="toCart">cart</button>
+      <view class="flex up-down-number justify-between">
+        <view ><button shape="circle" type="ghost" disabled></button></view>
+        <view class="flex"><button style="border-color: #05A94F; " onTap="onlow" type="outline"
+          iconName="minus" shape="circle"></button>
+          <view class="border border-solid border-gray20 value-container">{{number}}</view>
+          <button style="border-color: #05A94F;" onTap="onhigh" type="outline"s
+          iconName="plus" shape="circle"></button></view>
+        
+        <view >
+          <button onTap="toCart" type="outline" style="border-color: white;">
+            <!-- {{number  == 0 ? <image src="" class="img-item"></image> :}}  -->
+            <image src="/assets/icons/cart{{number != 0 ? '-with-dot' : ''}}.png"  class="img-item"></image>
+          </button>
+        </view> 
       </view>
+    
+      <!-- <view class="flex justify-center">
+        <view class="flex"><button onTap="onlow">low</button>{{number}}<button onTap="onhigh">high</button></view>
+        
+        <button onTap="toCart">cart</button>
+      </view> -->
       <view class="spacing"></view>
       <button class="w-full" style="border: #05A94F; background-color: #05A94F;" shape="pill"
         disabled="{{isLoading || product.categories.id === 11312}}" onTap="handleAddToCart">
