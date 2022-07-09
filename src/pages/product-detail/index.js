@@ -14,23 +14,19 @@ Page({
     product: {},
     items: [
       {
-        label: 'Start',
+        label: "Start",
         // sub: 'Description',
       },
       {
-        label: '50%',
+        label: "2%",
         // sub: 'Description',
       },
       {
-        label: 'End',
+        label: "End",
         // sub: 'Description',
       },
     ],
     activeIndex: 1,
-
-    
-
-
     failIndex: 1,
     number: 0,
     size: 0,
@@ -51,7 +47,6 @@ Page({
     this.setData({
       isLoading: true,
     });
-
     try {
       const productDetail = await getProductDetails({ id: product_id });
       this.setData({ product: productDetail });
@@ -97,7 +92,7 @@ Page({
   },
 
   async handleAddToCart() {
-    let campaignID = this.data.product.campaignId;
+    let campaignID = this.data.product;
     let productID = this.data.product.productInCampaign.productId;
 
     try {
@@ -118,17 +113,12 @@ Page({
       // });
       my.setStorage({
         key: "cart",
-        data: [
-          {
-            campaignId: campaignID,
-            orderItems: [
-              {
-                quantity: this.data.number,
-                productId: productID,
-              },
-            ],
-          },
-        ],
+        data: {
+          campaigns: campaignID,
+          quantity: this.data.number,
+          productId: productID,
+        },
+
         success: function () {
           my.alert({ content: "Saved successfully" });
         },
@@ -215,3 +205,5 @@ Page({
     });
   },
 });
+
+

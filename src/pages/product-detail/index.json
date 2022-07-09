@@ -1,5 +1,6 @@
 {
   "titleBarBottomColor": "transparent",
+  "componentLifeCycleV2": "YES",
   "usingComponents": {
     "product-images": "components/product-images/index",
     "product-header": "components/product-header/index",
@@ -12,6 +13,5 @@
     "block-header": "components/block-header/index",
     "block-variant": "components/block-variant/index",
     "up-down-number": "components/up-down-number"
-    
   }
 }
