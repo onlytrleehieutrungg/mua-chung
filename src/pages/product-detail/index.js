@@ -14,16 +14,16 @@ Page({
     product: {},
     items: [
       {
-        label: "Start",
-        sub: "Description",
+        label: 'Start',
+        // sub: 'Description',
       },
       {
-        label: "Middle",
-        sub: "Description",
+        label: '50%',
+        // sub: 'Description',
       },
       {
-        label: "End",
-        sub: "Description",
+        label: 'End',
+        // sub: 'Description',
       },
     ],
     activeIndex: 1,
