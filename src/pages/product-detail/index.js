@@ -27,10 +27,6 @@ Page({
       },
     ],
     activeIndex: 1,
-
-    
-
-
     failIndex: 1,
     number: 0,
     size: 0,
@@ -215,3 +211,5 @@ Page({
     });
   },
 });
+
+
