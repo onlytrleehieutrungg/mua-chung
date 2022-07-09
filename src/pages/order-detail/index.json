@@ -6,6 +6,7 @@
     "product-card": "child/product-card",
     "coupon-input": "child/coupon-input",
     "address-card": "components/address-card",
-    "button": "@tiki.vn/tini-ui/es/tu-button/index"
+    "button": "@tiki.vn/tini-ui/es/tu-button/index",
+    "cached-image": "components/cached-image/index"
   }
 }
