@@ -1,9 +1,9 @@
 {
   "name": "mua-chung-mini-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "tiki": {
     "appIdentifier": "vn.tiki.miniapp.muachung",
-    "buildNumber": 3,
+    "buildNumber": 1,
     "metadata": {
       "permissions": [
         "isFollowingSeller",
