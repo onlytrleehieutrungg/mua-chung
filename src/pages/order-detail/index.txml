@@ -1,47 +1,54 @@
-<view >
-  <view>{{productsInCart.campaignId}}</view>
-  <view>{{productsInCart.quantity}}</view>
-
-</view>
-
 <import-sjs from="../../utils/common.sjs" name="{numberFormatter}"></import-sjs>
-
-<view class="product {{className}}">
-  <template name="product-loading">
-    <view>
-      <view class="skeleton product-thumbnail-skeleton radius-8px mb-2x-small" />
-      <view class="skeleton skeleton-font-medium skeleton-100-width mb-4x-small" />
-      <rating isLoading className="mb-4x-small" />
-      <view class="skeleton skeleton-font-medium skeleton-70-width" />
-    </view>
-  </template>
-  <template name="product-completed">
-    <view class="flex items-center" catchTap="_onTapProduct">
-      <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px "
-        src="{{product.imageUrl == null ? '/assets/images/Frame.png' : product.imageUrl}}" mode="widthFix"
-        cacheWidth="{{280}}" />
-      <view class="container">
-        <text class="text-style" number-of-lines="{{2}}">
-          {{product.name}}
-        </text>
-        <view class="">
-          <view class="flex">
-            {{product.productInCampaign.status}}
-          </view>
+<view >
+  <view className="px-medium mt-medium">
+    <view class="mb-20px font-bold text-medium">Thông tin đơn hàng</view>
+    <!-- <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.imageUrl == null ? '/assets/images/Frame.png' : product.imageUrl}}"
+      mode="widthFix" cacheWidth="{{100}}" /> -->
+      <product-images images="{{product.imageUrl  == null ? '/assets/images/Frame.png' : product.imageUrl}}"/>
+    <view class="divider" />
+    <!-- <product-info isLoading="{{isLoading}}" specifications="{{product}}" description="{{product.description}}" /> -->
+    <view >
+        <view>
+          <block>
+            <view class="flex justify-between">
+              <text class="mr-medium text-nowrap">{{"Sản phẩm đã bán"}}</text>
+              <view class="font-bold text-right">
+                <text>{{100}}</text>
+              </view>
+            </view>
+            <view class="item-divider my-2x-small" />
+            <view class="flex justify-between">
+              <text class="mr-medium text-nowrap">{{"Người tham gia hiện tại"}}</text>
+              <view class="font-bold text-right">
+                <text>{{230}}</text>
+              </view>
+            </view>
+            <view class="item-divider my-2x-small" />
+            <view class="flex justify-between">
+              <text class="mr-medium text-nowrap">{{"Số lượng"}}</text>
+              <view class="font-bold text-right">
+                <text>{{productsInCart.quantity}}</text>
+              </view>
+            </view>
+          </block>
         </view>
-        <view class="flex items-center">
-          <text class="font-bold mr-2x-small" number-of-lines="{{1}}">
-            {{`${product.productInCampaign.price}₫`}}
-          </text>
-          <view tiki:if="{{product.campaignPriceLevels[0].discountValue}}"
-            class="text-white product-badge font-bold text-x-small radius-8px px-4x-small">
-            {{`-${product.campaignPriceLevels[0].discountValue}%`}}
-          </view>
-        </view>
-      </view>
-
+    
     </view>
-  </template>
+  </view>
+  <view class="fixed product-detail-footer bg-white">
+    <view class="product-detail-footer-button px-medium py-2x-small">
 
-  <template is="product-{{isLoading ? 'loading' : 'completed'}}" data="{{product}}" />
+    
+      <!-- <view class="flex justify-center">
+        <view class="flex"><button onTap="onlow">low</button>{{number}}<button onTap="onhigh">high</button></view>
+        
+        <button onTap="toCart">cart</button>
+      </view> -->
+      <view class="spacing"></view>
+      <button class="w-full" style="border: #05A94F; background-color: #05A94F;" shape="pill"
+        disabled="{{isLoading || product.categories.id === 11312}}" onTap="handleAddToCart">
+        {{product.categories.id === 11312 ? 'Vui lòng thanh toán tại website' : 'Payment'}}
+      </button>
+    </view>
+  </view>
 </view>
