@@ -80,7 +80,7 @@ Page({
     navigate({
       page: 'product-detail',
       params: {
-        product_id: product.id,
+        product_id: product_campaignId,
         spid: product.seller_product_id,
       },
     });
