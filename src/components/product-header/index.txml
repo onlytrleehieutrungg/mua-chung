@@ -10,9 +10,7 @@
 
 <template name="completed">
   <view>
-    <view class="text-large mb-2x-small">
-      Thời gian còn lại {{product.name}}
-    </view>
+  
     <view class="text-large mb-2x-small">
       {{product.name}}
     </view>

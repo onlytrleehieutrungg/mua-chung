@@ -1,9 +1,7 @@
 <view>
   <view className="px-medium mt-medium">
-    <view class="mb-20px font-bold text-medium">Thời gian còn lại</view>
-    <product-countdown
-  
-    />
+    <view class="mb-20px font-bold text-medium">Cái gì đó</view>
+
   </view>
   <product-images
     isLoading="{{isLoading}}"

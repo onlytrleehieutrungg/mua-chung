@@ -11,29 +11,30 @@
   </template>
 
   <template name="product-completed">
-    <view class="flex justify-between items-center" catchTap="_onTapProduct">
-      <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.product.imageUrl}}"
+    <view class="flex items-center" catchTap="_onTapProduct">
+      <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.imageUrl == null ? '/assets/images/Frame.png' : product.imageUrl}}"
         mode="widthFix" cacheWidth="{{280}}" />
       <view class="mx-2x-small"> 
         <text class="mb-4x-small" number-of-lines="{{2}}">
           {{product.name}}
         </text>
         <progress percent="90" active="true" show-info="true" />
-        <view tiki:if="{{product.rating_average}}" class="mb-4x-small">
-          <view class="mr-2x-small">
-            <cached-image
-              class="image-logo mr-2x-small"
+        <view  class="">
+          <view class="flex">
+            <image
+              class="image-item"
               src="{{'/assets/images/ancestors.png'}}"
               mode="widthFix"
               cacheWidth="{{200}}"
             />
+            {{productInCampaign.price}}
           </view>
           
           <rating rate="{{product.rating_average}}" votes="{{product.review_count}}" />
         </view>
         <view class="flex items-center">
           <text class="font-bold mr-2x-small" number-of-lines="{{1}}">
-            {{numberFormatter(product.price, ' ₫')}}
+            {{ '15.000 ₫'}}
           </text>
           <view tiki:if="{{product.discount_rate}}"
             class="text-white product-badge font-bold text-x-small radius-8px px-4x-small">

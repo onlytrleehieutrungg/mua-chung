@@ -27,7 +27,7 @@ export const getProductsAPI = async ({
 }) => {
   const res = await request({
     baseUrl: 'https://quangnt1702.ml/api/v1',
-    path: `/products`,
+    path: `/campaigns?Page=1&Size=4`,
     headers: {
       'x-source': 'local',
     },

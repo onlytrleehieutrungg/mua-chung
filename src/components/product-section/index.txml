@@ -12,7 +12,7 @@
         tiki:for="{{products}}"
         tiki:key="id"
       >
-        <product product="{{item}}" onTapProduct="_onTapProduct"/>
+        <product product="{{item}}" productInCampaign="{{item.productInCampaign}}" onTapProduct="_onTapProduct"/>
       </block>
     </view>
   </template>
@@ -30,7 +30,7 @@
         tiki:for="{{products}}"
         tiki:key="id"
       >
-        <product product="{{item}}" onTapProduct="_onTapProduct"/>
+        <product product="{{item}}" productInCampaign="{{item.productInCampaign}}" onTapProduct="_onTapProduct"/>
       </block>
     </view>
   </template>
