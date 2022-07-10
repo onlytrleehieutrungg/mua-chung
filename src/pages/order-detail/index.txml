@@ -2,27 +2,37 @@
 <view >
   <view className="px-medium mt-medium">
     <view class="mb-20px font-bold text-medium">Thông tin đơn hàng</view>
-    <!-- <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="{{product.imageUrl == null ? '/assets/images/Frame.png' : product.imageUrl}}"
-      mode="widthFix" cacheWidth="{{100}}" /> -->
-      <product-images images="{{product.imageUrl  == null ? '/assets/images/Frame.png' : product.imageUrl}}"/>
-    <view class="divider" />
+    <cached-image className="product-thumbnail radius-8px mb-2x-small radius-8px " src="/assets/images/heo.png"
+      mode="widthFix" cacheWidth="{{100}}" />
+      <!-- <product-images images="{{product.imageUrl  == null ? '/assets/images/Frame.png' : product.imageUrl}}"/> -->
     <!-- <product-info isLoading="{{isLoading}}" specifications="{{product}}" description="{{product.description}}" /> -->
     <view >
         <view>
           <block>
             <view class="flex justify-between">
-              <text class="mr-medium text-nowrap">{{"Sản phẩm đã bán"}}</text>
+              <text style="color: red" class="mr-medium text-nowrap">{{"Còn 0:59:58s để hoàn thành đơn hàng"}}</text>
+            </view>
+            <view class="flex justify-between">
+              <text class="mr-medium text-nowrap" style="font-size:20px;">{{"Total"}}</text>
+              <view class="font-bold text-right" style="font-size:20px;">
+                <text>{{'150.000 VND'}}</text>
+              </view>
+            </view>
+            <view class="flex justify-between">
+              <text class="mr-medium text-nowrap">{{"Trả trước"}}</text>
               <view class="font-bold text-right">
-                <text>{{100}}</text>
+                <text>{{'120.000 VND'}}</text>
               </view>
             </view>
             <view class="item-divider my-2x-small" />
             <view class="flex justify-between">
-              <text class="mr-medium text-nowrap">{{"Người tham gia hiện tại"}}</text>
+              <text class="mr-medium text-nowrap">{{"Còn lại"}}</text>
               <view class="font-bold text-right">
-                <text>{{230}}</text>
+                <text>{{'30.000 VND'}}</text>
               </view>
             </view>
+            <view class="item-divider my-2x-small" />
+           
             <view class="item-divider my-2x-small" />
             <view class="flex justify-between">
               <text class="mr-medium text-nowrap">{{"Số lượng"}}</text>
@@ -30,6 +40,7 @@
                 <text>{{productsInCart.quantity}}</text>
               </view>
             </view>
+           
           </block>
         </view>
     
