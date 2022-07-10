@@ -27,14 +27,14 @@
       <product-info isLoading="{{isLoading}}" specifications="{{product}}" description="{{product.description}}" />
     </view>
     <view class="section-divider" />
-    <block tiki:if="{{isLoading || relativeProducts.length}}">
+    <!-- <block tiki:if="{{isLoading || relativeProducts.length}}">
       <view class="p-medium bg-white">
         <view class="mb-small font-bold text-medium">Sản phẩm tương tự</view>
         <product-section isLoading="{{isLoading}}" skeletons="{{4}}" products="{{relativeProducts}}"
           onTapProduct="onTapProduct" />
       </view>
       <view class="section-divider" />
-    </block>
+    </block> -->
   </view>
   <view class="fixed product-detail-footer bg-white">
     <view class="product-detail-footer-button px-medium py-2x-small">
@@ -43,7 +43,7 @@
         <view class="flex"><button style="border-color: #05A94F; " onTap="onlow" type="outline"
           iconName="minus" shape="circle"></button>
           <view class="border border-solid border-gray20 value-container">{{number}}</view>
-          <button style="border-color: #05A94F;" onTap="onhigh" type="outline"s
+          <button style="border-color: #05A94F;" onTap="onhigh" type="outline"
           iconName="plus" shape="circle"></button></view>
         
         <view >

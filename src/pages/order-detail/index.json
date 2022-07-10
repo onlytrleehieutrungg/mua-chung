@@ -4,9 +4,12 @@
     "cart-action": "child/cart-action",
     "time-select": "child/time-select",
     "product-card": "child/product-card",
+    "product-images": "components/product-images/index",
+    "product-info": "components/product-info/index",
     "coupon-input": "child/coupon-input",
     "address-card": "components/address-card",
     "button": "@tiki.vn/tini-ui/es/tu-button/index",
+    "toast": "components/toast/index",
     "cached-image": "components/cached-image/index"
   }
 }
