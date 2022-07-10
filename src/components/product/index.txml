@@ -20,15 +20,18 @@
         </text>
         <progress percent="80" active="true" show-info="true" active-color="#037235" stroke-width="10"/>
         <view  class="">
-          <view class="flex">
+          <!-- <view class="flex">
             <image
               class="image-item"
               src="{{'/assets/images/ancestors.png'}}"
               mode="widthFix"
               cacheWidth="{{280}}"
             />
-            {{product.productInCampaign.status}}
-          </view>
+            44
+          </view> -->
+          <text style="color: red" number-of-lines="{{0}}">
+            2:27:58 time out
+          </text>
           
 
         </view>

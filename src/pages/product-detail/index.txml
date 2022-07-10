@@ -1,7 +1,7 @@
 
 <view>
   <view className="px-medium mt-medium">
-    <view class="mb-20px font-bold text-medium">Cái gì đó</view>
+    <view class="mb-20px font-bold text-medium">2:27:58 time out</view>
   </view>
   <product-images isLoading="{{isLoading}}" images="{{product.imageUrl}}" />
   <view class="py-medium product-detail-content">

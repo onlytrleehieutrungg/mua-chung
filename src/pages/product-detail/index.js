@@ -14,16 +14,20 @@ Page({
     product: {},
     items: [
       {
-        label: "Start",
-        // sub: 'Description',
+        label: "0%",
+        sub: 'Start',
       },
       {
-        label: "2%",
-        // sub: 'Description',
+        label: "5%",
+        sub: '50/200',
       },
       {
-        label: "End",
-        // sub: 'Description',
+        label: "7%",
+        sub: '100/200',
+      },
+      {
+        label: "10%",
+        sub: 'End',
       },
     ],
     activeIndex: 1,
